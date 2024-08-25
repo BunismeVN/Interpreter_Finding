@@ -1,0 +1,181 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+    width: 100%;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 75px;
+}
+
+.nav_logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_toggle{
+    position: relative;
+    width: 32px;
+    height: 32px;
+
+}
+
+.nav_burger,
+.nav_close{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav_close{
+    opacity: 0;
+}
+
+.item_flag{
+    height:20px;
+    width:20px;
+}   
+
+.nav a{
+    color: var(--black-color);
+}
+
+.nav_list{
+    display: flex;
+    align-items: center;
+}
+
+.nav_list .nav_link {
+   padding: 15px;
+}
+
+/* .nav_list a:hover{
+    background-color: var(--primary-color);
+    border-radius: 50px;
+} */
+
+.nav_list .button_login{
+    background-color: var(--primary-color);
+    padding: 15px;
+    color: var(--white-color);
+    border-radius: 50px;
+}
+
+.language{
+    display: flex;
+    align-items: center;  
+}
+
+.flag_country{
+    display: flex;
+    align-items: center;     
+}
+
+.flag_country img{
+    margin-left: 2px;
+}
+
+.language i{
+    margin-left: 4px;
+    height: 20px;
+}
+
+.drop_down{
+    cursor: pointer;
+    position: relative;
+}
+
+.nav_language{
+    /* margin-top: 10px; */
+    position: absolute;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
+}
+
+.nav_language .nav_item{
+    padding: 0px 0px 10px 0px;
+
+}
+
+.drop_down:hover .nav_language{
+    top: 45px;
+    max-height: 100%;
+    transition: max-height .4s ease-out;
+    overflow: initial;
+}
+
+.nav_toggle{
+    display: none;
+}
+
+
+@media (max-width:1023px){
+   .nav_menu{
+    position: absolute;
+    left: 0;
+    top: 55px;
+    width: 100%;
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+    padding: 0px 75px 20px 75px ;
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+    max-width: -webkit-fill-available;
+   }
+
+   .nav_logo{
+    width: 100%;
+   }
+   
+   .nav_menu::-webkit-scrollbar{
+    width: 0;
+   }
+
+   .nav_list{
+    display: inline;
+   }
+
+    .nav_list .nav_link {
+    padding: 20px 20px 20px 0px;
+    }
+
+    .language{
+        justify-content: space-between;     
+    }   
+    .nav_list .button_login{
+        display: block;
+        text-align: center;
+    }
+    .drop_down:hover .nav_language{
+        top: 50px;
+    }
+    .nav_toggle{
+        display: block;
+    }
+  
+   }
+
+.show-menu {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  
+.show-icon .nav_burger {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+.show-icon .nav_close {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
